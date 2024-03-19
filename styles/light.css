@@ -4,9 +4,184 @@
   переключая тему
 */
 
+:root .theme_light {
+  --main-color: #FFF1F7;
+  --text-color: #353430;
+  --accent-color: #FF8DCB;
+  --header-title-color: #FFC2E6;
+}
+
 .page.theme_light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  color: var(--text-color, #353430);
+  background-color: var(--main-color, #FFF1F7);
+  background-image: url(../images/cover-image-light.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.theme_light .header__decorated-element {
+  display: none;
+}
+
+.theme_light .header__decorated-element::after {
+  display: none;
+}
+
+.theme_light .header {
+  background-image: url(../images/cover-image-light.png);
+}
+
+.theme_light .decorated-zone::before {
+  border-block-start: 1px solid var(--text-color, #353430);
+  border-inline-end: 1px solid var(--text-color, #353430);
+}
+
+.theme_light .decorated-zone::after {
+  border-block-end: 1px solid var(--text-color, #353430);
+  border-inline-start: 1px solid var(--text-color, #353430);
+}
+
+.theme_light .header__theme-menu {
+  color: var(--text-color, #353430);
+}
+
+.theme_light .title {
+  color: var(--header-title-color, #FFC2E6);
+}
+
+.theme_light .header__title {
+  text-shadow: 4px 4px 0px var(--accent-color, #FF8DCB);
+}
+
+.theme_light .header__theme-menu-button_active {
+  outline: 1px solid var(--text-color, #353430);
+}
+
+.theme_light .header__theme-menu-button:hover {
+  outline: 1px solid rgba(50, 49, 45, 0.40);
+}
+
+.theme_light .header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid rgba(50, 49, 45, 0.40);
+  outline: none;
+}
+
+.theme_light .title-decor {
+  color: var(--text-color, #353430);
+  background-color: var(--accent-color, #FF8DCB);
+}
+
+.theme_light .heading {
+  color: var(--text-color, #353430);
+}
+
+.theme_light .content_text-link {
+  text-shadow: 2px 2px 0px var(--accent-color, #FF0070);
+}
+
+.theme_light .content_text-link:hover {
+  border-block-end: 1px solid var(--text-color, #353430);
+}
+
+.theme_light .content_text-link:focus-visible {
+  outline: 1px solid var(--text-color, #353430);
+}
+
+.theme_light .footer__title {
+  text-shadow: 2px 2px 0px var(--accent-color, #FF8DCB);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-color: #FFF1F7;
+    --text-color: #353430;
+    --accent-color: #FF8DCB;
+    --header-title-color: #FFC2E6;
+  }
+  
+  .page {
+    color: var(--text-color, #353430);
+    background-color: var(--main-color, #FFF1F7);
+    background-image: url(../images/cover-image-light.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .header__decorated-element {
+    display: none;
+  }
+  
+  .header__decorated-element::after {
+    display: none;
+  }
+  
+  .header {
+    background-image: url(../images/cover-image-light.png);
+  }
+  
+  .decorated-zone::before {
+    border-block-start: 1px solid var(--text-color, #353430);
+    border-inline-end: 1px solid var(--text-color, #353430);
+  }
+  
+  .decorated-zone::after {
+    border-block-end: 1px solid var(--text-color, #353430);
+    border-inline-start: 1px solid var(--text-color, #353430);
+  }
+  
+  .header__theme-menu {
+    color: var(--text-color, #353430);
+  }
+  
+  .title {
+    color: var(--header-title-color, #FFC2E6);
+  }
+  
+  .header__title {
+    text-shadow: 4px 4px 0px var(--accent-color, #FF8DCB);
+  }
+  
+  .header__theme-menu-button_active {
+    outline: 1px solid var(--text-color, #353430);
+  }
+  
+  .header__theme-menu-button:hover {
+    outline: 1px solid rgba(50, 49, 45, 0.40);
+  }
+  
+  .header__theme-menu-button:focus-visible {
+    border-block-end: 1px solid rgba(50, 49, 45, 0.40);
+    outline: none;
+  }
+  
+  .title-decor {
+    color: var(--text-color, #353430);
+    background-color: var(--accent-color, #FF8DCB);
+  }
+  
+  .heading {
+    color: var(--text-color, #353430);
+  }
+  
+  .content_text-link {
+    text-shadow: 2px 2px 0px var(--accent-color, #FF0070);
+  }
+  
+  .content_text-link:hover {
+    border-block-end: 1px solid var(--text-color, #353430);
+  }
+  
+  .content_text-link:focus-visible {
+    outline: 1px solid var(--text-color, #353430);
+  }
+  
+  .footer__title {
+    text-shadow: 2px 2px 0px var(--accent-color, #FF8DCB);
+  }
 }

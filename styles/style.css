@@ -2,4 +2,328 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  min-inline-size: 375px;
+  color: var(--text-color, #F1B2CE);
+  background-color: var(--main-color, #000028);
+  font-family: var(--main-font, 'IBM Plex Mono', sans-serif);
+  font-size: var(--text-font-size, 18px);
+  font-style: normal;
+  font-weight: var(--text-font-weight, 400);
+  line-height: 130%;
+  background-image: url(../images/cover-image.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header {
+  min-block-size: 668px;
+  position: relative;
+  padding: var(--small-margin, 10px);
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr fit-content(192px) 1fr;
+  background-image: url(../images/cover-image-dark.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+  border-block-start: 1px solid var(--accent-color, #FF0070);
+  border-inline-end: 1px solid var(--accent-color, #FF0070);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
+  border-block-end: 1px solid var(--accent-color, #FF0070);
+  border-inline-start: 1px solid var(--accent-color, #FF0070);
+}
+
+.header__decorated-element {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 19px;
+  color: var(--accent-color, #FF0070);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 25px;
+}
+
+.header__decorated-element::after {
+  content: "";
+  display: inline-block;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  filter: drop-shadow(0px 0px 4px var(--accent-color, #FF0070));
+  background-color: var(--accent-color, #FF0070);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  color: var(--accent-color, #FF0070);
+}
+
+.header__theme-menu-list {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 13px;
+}
+
+.title {
+  color: var(--header-title-color, #DB00FF);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: var(--heading-font-weight, 700);
+  line-height: 82.5%;
+}
+
+.header__title {
+  justify-self: flex-start;
+  text-shadow: 4px 4px 0px var(--accent-color, #FF0070);
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  padding: 0 13px;
+  border: none;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color, #FF0070);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--accent-color, #FF0070);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--accent-color, #FF0070);
+  outline: none;
+}
+
+.header__text {
+  max-inline-size: 364px;
+  justify-self: flex-end;
+}
+
+.title-decor {
+  color: var(--main-color, #000028);
+  font-size: var(--text-font-size, 18px);
+  background-color: var(--accent-color, #FF0070);
+  font-weight: var(--heading-font-weight, 700);
+}
+
+.content {
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+  gap: var(--section-gap, 50px);
+  margin: var(--big-margin, 40px) var(--small-margin, 10px);
+}
+
+.section {
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+}
+
+.heading {
+  color: var(--accent-color, #FF0070);
+  font-size: inherit;
+  font-weight: var(--heading-font-weight, 700);
+}
+
+.content__text {
+  margin-block-start: var(--small-margin, 10px);
+}
+
+.content_text-link {
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: 2px 2px 0px var(--accent-color, #FF0070);
+  font-size: inherit;
+}
+
+.content_text-link:hover {
+  border-block-end: 1px solid var(--text-color, #F1B2CE);
+}
+
+.content_text-link:focus-visible {
+  outline: 1px solid var(--text-color, #F1B2CE);
+}
+
+.reasons,
+.obstacles,
+.advices {
+  gap: var(--middle-margin, 20px);
+}
+
+.advices__text-heading{
+  font-weight: var( --text-font-weight, 400);
+}
+
+.visuals {
+  gap: var(--small-margin, 10px);
+}
+
+.visuals_image {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  display: grid;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 668px;
+  padding: var(--small-margin, 10px);
+}
+
+@media (width >= 768px) {
+  :root {
+    --big-margin: 60px;
+    --section-gap: 80px; 
+  }
+
+  .header {
+    padding: var(--middle-margin, 20px) 0;
+  }
+
+  .decorated-zone::before {
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
+  }
+  
+  .decorated-zone::after {
+    inset-block-end: 20px;
+    inset-inline-start: 20px;
+  }
+
+  .header__decorated-element {
+    inset-block-start: 20px;
+    inset-inline-end: 29px;
+  }
+  
+  .header__theme-menu {
+    margin-inline-end: var(--middle-margin, 20px);
+  }
+
+  .header__text {
+    margin-inline-end: var(--middle-margin, 20px);
+  }
+  
+  .title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .content {
+    gap: var(--section-gap, 80px);
+    margin: var(--big-margin, 60px) var(--middle-margin, 20px);
+  }
+
+  .reasons,
+  .obstacles,
+  .advices {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .reasons__heading {
+    grid-row: span 2;
+  }
+
+  .reasons__text-block,
+  .advices__text-block {
+    grid-column: span 2;
+    padding-inline-start: 5px;
+  }
+
+  .advices__heading {
+    grid-row: span 6;
+  }
+
+  .visuals {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, fit-content);
+    gap: var(--middle-margin, 20px);
+  }
+
+  .visuals_title {
+    grid-column: span 3;
+  }
+
+  .visuals__sunset {
+    grid-column: span 2;
+  }
+
+  .visuals__dessert {
+    grid-row: span 2;
+  }
+
+  .visuals__tape {
+    grid-row: span 2;
+  }
+
+  .visuals__street {
+    grid-column: span 2;
+  }
+
+  .footer {
+    padding: var(--middle-margin, 20px);
+  }
+}
+
+@media (768px <= width < 1024px) {
+  .header {
+    min-block-size: 1024px;
+  }
+
+  .obstacles_text-block {
+    grid-column: span 3;
+  }
+  
+  .footer {
+    min-block-size: 1024px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-block-size: 768px;
+  }
+
+  .header__text {
+    max-inline-size: 491px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: flex-start;
+    gap: 10px;
+  }
+
+  .header__theme-menu-list {
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline-start: 20px;
+  }
+
+  .obstacles_text-block {
+    grid-row-start: 2;
+  }
+
+  .footer {
+    min-block-size: 768px;
+  }
 }
