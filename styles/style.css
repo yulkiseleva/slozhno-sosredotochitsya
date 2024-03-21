@@ -3,9 +3,9 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   min-inline-size: 375px;
-  color: var(--text-color, #F1B2CE);
-  background-color: var(--main-color, #000028);
-  font-family: var(--main-font, 'IBM Plex Mono', sans-serif);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-family: var(--main-font, 'IBM Plex Mono', monospace);
   font-size: var(--text-font-size, 18px);
   font-style: normal;
   font-weight: var(--text-font-weight, 400);
@@ -18,43 +18,20 @@
 
 .header {
   min-block-size: 668px;
+  block-size: 100vb;
   position: relative;
   padding: var(--small-margin, 10px);
   display: grid;
   align-items: center;
   grid-template-rows: 1fr fit-content(192px) 1fr;
-  background-image: url(../images/cover-image-dark.png);
-  background-size: cover;
-  background-position: center;
-}
-
-.decorated-zone::before {
-  content: "";
-  position: absolute;
-  inline-size: 25px;
-  block-size: 25px;
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
-  border-block-start: 1px solid var(--accent-color, #FF0070);
-  border-inline-end: 1px solid var(--accent-color, #FF0070);
-}
-
-.decorated-zone::after {
-  content: "";
-  position: absolute;
-  inline-size: 25px;
-  block-size: 25px;
-  inset-block-end: 10px;
-  inset-inline-start: 10px;
-  border-block-end: 1px solid var(--accent-color, #FF0070);
-  border-inline-start: 1px solid var(--accent-color, #FF0070);
 }
 
 .header__decorated-element {
+  display: block;
   position: absolute;
   inset-block-start: 10px;
   inset-inline-end: 19px;
-  color: var(--accent-color, #FF0070);
+  color: var(--accent-color);
   font-family: inherit;
   font-size: inherit;
   line-height: 25px;
@@ -66,13 +43,36 @@
   inline-size: 9px;
   block-size: 9px;
   border-radius: 50%;
-  filter: drop-shadow(0px 0px 4px var(--accent-color, #FF0070));
-  background-color: var(--accent-color, #FF0070);
+  background-color: var(--accent-color);
+  filter: drop-shadow(0px 0px 4px var(--accent-color));
+  -webkit-filter:drop-shadow(0px 0px 4px var(--accent-color));
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+  border-block-start: 1px solid var(--header-decoration-color);
+  border-inline-end: 1px solid var(--header-decoration-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
+  border-block-end: 1px solid var(--header-decoration-color);
+  border-inline-start: 1px solid var(--header-decoration-color);
 }
 
 .header__theme-menu {
   justify-self: end;
-  color: var(--accent-color, #FF0070);
+  color: var(--header-decoration-color);
 }
 
 .header__theme-menu-list {
@@ -82,7 +82,7 @@
 }
 
 .title {
-  color: var(--header-title-color, #DB00FF);
+  color: var(--header-title-color);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: var(--heading-font-weight, 700);
   line-height: 82.5%;
@@ -90,27 +90,32 @@
 
 .header__title {
   justify-self: flex-start;
-  text-shadow: 4px 4px 0px var(--accent-color, #FF0070);
+  text-shadow: 4px 4px 0px var(--accent-color);
 }
 
 .header__theme-menu-button {
   background-color: transparent;
   padding: 0 13px;
   border: none;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--accent-color, #FF0070);
+  outline: 1px solid var(--header-decoration-color);
   pointer-events: none;
 }
 
-.header__theme-menu-button:hover {
-  outline: 1px solid var(--accent-color, #FF0070);
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--header-decoration-color);
+  outline: none;
 }
 
-.header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--accent-color, #FF0070);
+.header__theme-menu-button:focus {
   outline: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button-color);
 }
 
 .header__text {
@@ -119,9 +124,9 @@
 }
 
 .title-decor {
-  color: var(--main-color, #000028);
+  color: var(--title-decor-text-color);
   font-size: var(--text-font-size, 18px);
-  background-color: var(--accent-color, #FF0070);
+  background-color: var(--accent-color);
   font-weight: var(--heading-font-weight, 700);
 }
 
@@ -138,7 +143,7 @@
 }
 
 .heading {
-  color: var(--accent-color, #FF0070);
+  color: var(--blocks-heading-color);
   font-size: inherit;
   font-weight: var(--heading-font-weight, 700);
 }
@@ -150,16 +155,20 @@
 .content_text-link {
   display: inline-block;
   text-decoration: none;
-  text-shadow: 2px 2px 0px var(--accent-color, #FF0070);
+  text-shadow: 2px 2px 0px var(--accent-color);
   font-size: inherit;
 }
 
 .content_text-link:hover {
-  border-block-end: 1px solid var(--text-color, #F1B2CE);
+  border-block-end: 1px solid var(--text-color);
 }
 
 .content_text-link:focus-visible {
-  outline: 1px solid var(--text-color, #F1B2CE);
+  outline: 1px solid var(--text-color);
+}
+
+.content_text-link:focus {
+  outline: none;
 }
 
 .reasons,
@@ -189,15 +198,15 @@
   align-items: center;
   justify-content: center;
   min-block-size: 668px;
+  block-size: 100vb;
   padding: var(--small-margin, 10px);
 }
 
-@media (width >= 768px) {
-  :root {
-    --big-margin: 60px;
-    --section-gap: 80px; 
-  }
+.footer__title {
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
 
+@media (width >= 768px) {
   .header {
     padding: var(--middle-margin, 20px) 0;
   }
@@ -286,16 +295,8 @@
 }
 
 @media (768px <= width < 1024px) {
-  .header {
-    min-block-size: 1024px;
-  }
-
   .obstacles_text-block {
     grid-column: span 3;
-  }
-  
-  .footer {
-    min-block-size: 1024px;
   }
 }
 

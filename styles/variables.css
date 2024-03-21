@@ -4,11 +4,15 @@
 */
 
 :root {
-  --main-color: #000028;
+  --background-color: #000028;
   --text-color: #F1B2CE;
   --accent-color: #FF0070;
   --header-title-color: #DB00FF;
-  --main-font: 'IBM Plex mono', sans-serif;
+  --blocks-heading-color:  #FF0070;
+  --header-decoration-color: #FF0070;
+  --title-decor-text-color: #000028;
+  --button-color: rgba(255, 0, 112, 0.40);
+  --main-font: 'IBM Plex mono', monospace;
   --text-font-size: 18px;
   --text-font-weight: 400;
   --heading-font-weight: 700;
@@ -17,3 +21,9 @@
   --big-margin: 40px;
   --section-gap: 50px;
 }
+
+@media (width >= 768px) {
+  :root {
+    --big-margin: 60px;
+    --section-gap: 80px; 
+  }

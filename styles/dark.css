@@ -4,91 +4,14 @@
   переключая тему
 */
 
-:root .theme-dark {
-  --main-color: #000028;
+.page.theme_dark {
+  --background-color: #000028;
   --text-color: #F1B2CE;
   --accent-color: #FF0070;
   --header-title-color: #DB00FF;
-}
-
-.page.theme_dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
-  color: var(--text-color, #F1B2CE);
-  background-color: var(--main-color, #000028);
+  --blocks-heading-color:  #FF0070;
+  --header-decoration-color: #FF0070;
+  --title-decor-text-color: #000028;
+  --button-color: rgba(255, 0, 112, 0.40);
   background-image: url(../images/cover-image-dark.png);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.theme_dark .header {
-  background-image: url(../images/cover-image-dark.png);
-}
-
-.theme_dark .decorated-zone::before {
-  border-block-start: 1px solid var(--accent-color, #FF0070);
-  border-inline-end: 1px solid var(--accent-color, #FF0070);
-}
-
-.theme_dark .decorated-zone::after {
-  border-block-end: 1px solid var(--accent-color, #FF0070);
-  border-inline-start: 1px solid var(--accent-color, #FF0070);
-}
-
-.theme_dark .header__decorated-element {
-  color: var(--accent-color, #FF0070);
-}
-
-.theme_dark .header__decorated-element::after {
-  filter: drop-shadow(0px 0px 4px var(--accent-color, #FF0070));
-  background-color: var(--accent-color, #FF0070);
-}
-
-.theme_dark .header__theme-menu {
-  color: var(--accent-color, #FF0070);
-}
-
-.theme_dark .title {
-  color: var(--header-title-color, #DB00FF);
-}
-
-.theme_dark .header__title {
-  text-shadow: 4px 4px 0px var(--accent-color, #FF0070);
-}
-
-.theme_dark .header__theme-menu-button_active {
-  outline: 1px solid var(--accent-color, #FF0070);
-}
-
-.theme-dark .header__theme-menu-button:hover {
-  outline: 1px solid var(--accent-color, #FF0070);
-}
-
-.theme-dark .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--accent-color, #FF0070);
-  outline: none;
-}
-
-.theme_dark .title-decor {
-  color: var(--main-color, #000028);
-  background-color: var(--accent-color, #FF0070);
-}
-
-.theme_dark .heading {
-  color: var(--accent-color, #FF0070);
-}
-
-.theme_dark .content_text-link {
-  text-shadow: 2px 2px 0px var(--accent-color, #FF0070);
-}
-
-.theme_dark .content_text-link:hover {
-  border-block-end: 1px solid var(--text-color, #F1B2CE);
-}
-
-.theme_dark .content_text-link:focus-visible {
-  outline: 1px solid var(--text-color, #F1B2CE);
 }
