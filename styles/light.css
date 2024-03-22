@@ -21,11 +21,11 @@
 }
 
 .theme_light .header__decorated-element {
-  display: none;
+  visibility: hidden;
 }
 
 .theme_light .header__decorated-element::after {
-  display: none;
+  visibility: hidden;
 }
 
 .theme_light .title-decor {
@@ -59,11 +59,11 @@
   }
   
   .header__decorated-element {
-    display: none;
+    visibility: hidden;
   }
   
   .header__decorated-element::after {
-    display: none;
+    visibility: hidden;
   }
 }
 
@@ -74,4 +74,5 @@
 
   .footer__title {
     --accent-color: #FF0070;
+  }
 }

@@ -15,3 +15,17 @@
   --button-color: rgba(255, 0, 112, 0.40);
   background-image: url(../images/cover-image-dark.png);
 }
+
+.theme_dark .header__decorated-element {
+  visibility: visible;
+}
+
+.theme_dark .header__decorated-element::after {
+  visibility: visible;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    background-image: url(../images/cover-image-dark.png)
+  }
+} 

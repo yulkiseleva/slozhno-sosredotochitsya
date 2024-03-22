@@ -44,8 +44,7 @@
   block-size: 9px;
   border-radius: 50%;
   background-color: var(--accent-color);
-  filter: drop-shadow(0px 0px 4px var(--accent-color));
-  -webkit-filter:drop-shadow(0px 0px 4px var(--accent-color));
+  box-shadow: 0 0 4px 2px var(--accent-color);
 }
 
 .decorated-zone::before {
@@ -163,12 +162,12 @@
   border-block-end: 1px solid var(--text-color);
 }
 
-.content_text-link:focus-visible {
-  outline: 1px solid var(--text-color);
-}
-
 .content_text-link:focus {
   outline: none;
+}
+
+.content_text-link:focus-visible {
+  outline: 1px solid var(--text-color);
 }
 
 .reasons,
@@ -177,7 +176,7 @@
   gap: var(--middle-margin, 20px);
 }
 
-.advices__text-heading{
+.advices__text-heading {
   font-weight: var( --text-font-weight, 400);
 }
 
